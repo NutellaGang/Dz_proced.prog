@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+	bool VkomnateSvetlo, NaUliceSvetlo, Lampa, Shtori;
+	cin >> Lampa;
+	cin >> NaUliceSvetlo;
+	cin >> Shtori;
+	
+	if (NaUliceSvetlo == true && Shtori == true || Lampa == true){
+		VkomnateSvetlo = true;
+	} else
+		VkomnateSvetlo = false;
+	cout << VkomnateSvetlo;
+    
+}
