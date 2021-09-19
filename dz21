@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	double p = 3.141592653589793;
+	float R, r, h, l, V, S;
+	cout << "Введите радиус большего основания: ";
+	cin >> R;
+	cout << "Введите радиус меньшего основания: ";
+	cin >> r;
+	cout << "Введите высоту: ";
+	cin >> h;
+	cout << "Введите длину образующей: " ;
+	cin >> l;
+	V = 1.0/3.0 * p * h * (R * R + R * r + r * r);
+	cout << "Объем конуса равен: " << V << endl;
+	S = p * (R * R + (R + r) * l + r * r);
+	cout << "Площадь конуса равна: " << S << endl;
+	
+}
