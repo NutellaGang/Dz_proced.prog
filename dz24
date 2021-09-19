@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	int n, i;
+	cout << "Введите число n: ";
+	cin >> n;
+	i = n;
+	for (n = i + 1; n <= i + 10; n++){
+		cout << " " << n;
+	}
+	
+}
