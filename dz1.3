@@ -6,9 +6,14 @@ using namespace std;
 int main()
 {
     float b, c, x;
+	cout << "Введите значение b не равное 0: ";
     cin >> b;
+	cout << "c = ";
     cin >> c;
-    x = c * -1 / b;
-    cout << "x = " << x;
+	if (b != 0){
+		x = c * -1 / b;
+	    cout << "x = " << x;
+	} else
+		cout << "Вы ввели неверное значение b, попробуйте еще раз";
     
 }
