@@ -1,23 +1,41 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-
 using namespace std;
+
+double getValue(double variable, string variableName){
+	cout << "Введите значение для " << variableName << ": "	;
+	while (!(cin >> variable)) {
+		cout << "Введите коректное значение!\n";
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	return variable;
+}
 
 int main()
 {
-    float a, b, c, d, x1, x2;
-    cout << "a = ";
-    cin >> a;
-    cout << "b = ";
-    cin >> b;
-    cout << "c = ";
-    cin >> c;
+    double a, b, c, d, x1, x2;
+    a = getValue(a, "a");
+    b = getValue(b, "b");
+	c = getValue(c, "c");
     d = b * b - 4 * a * c;
-    if(d >= 0){
-        x1 = (-1 * b + sqrt(d)) / 2 * a;
-        x2 = (-1 * b - sqrt(d)) / 2 * a;
-        }
-    cout << "x1 = " << x1 <<"\nx2 = " << x2;
-    
+    if(a == 0)
+		if (b == 0)
+			if (c == 0)
+				cout << "x принадлежит R";
+			else
+				cout << "x принадлежит пустому множеству";
+		else
+			if (c == 0)
+				cout << "x = " << 0;
+			else
+				cout << "x = " << -c / b;
+	else if ((d) > 0)
+		cout << "x1 = " << (-b - sqrt(d)) / (2 * a) << " x2 = " << (-b + sqrt(d)) / (2 * a);            
+    else if ((d) == 0)
+		cout << "x = " << -b / (2 * a);
+	else if (d < 0)
+		cout << "x принадлежит пустому множеству";
+
 }
