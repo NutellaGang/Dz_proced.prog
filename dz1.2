@@ -1,17 +1,23 @@
-  
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+double getValue(double variable, string variableName){
+	cout << "Введите значение для " << variableName << ": "	;
+	while (!(cin >> variable)) {
+		cout << "Введите коректное значение!\n";
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	return variable;
+}
+
 int main()
 {
-    int num1, num2, sum, raz, p;
-    float d;
-	cout << "num1 = ";
-    cin >> num1;
-	cout << "num2 = ";
-    cin >> num2;
+   	double num1, num2, sum, raz, p, d;
+    num1 = getValue(num1, "1-го числа");
+    num2 = getValue(num2, "2-го числа");
     sum = num1 + num2;
     raz = abs(num1 - num2);
     p = num1 * num2;
