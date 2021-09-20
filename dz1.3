@@ -3,17 +3,27 @@
 
 using namespace std;
 
+double getValue(double variable, string variableName){
+	cout << "Введите значение для " << variableName << ": "	;
+	while (!(cin >> variable)) {
+		cout << "Введите коректное значение!\n";
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	return variable;
+}
+
 int main()
 {
-    float b, c, x;
-	cout << "Введите значение b не равное 0: ";
-    cin >> b;
-	cout << "c = ";
-    cin >> c;
-	if (b != 0){
-		x = c * -1 / b;
-	    cout << "x = " << x;
-	} else
+    double b, c, x;
+	b = getValue(b, "b");
+	c = getValue(c, "c");
+	if (b == 1 && c == 0)
+		cout << "x = " << "R";
+	else if (b != 0){
+	    cout << "x = " << c * -1 / b;
+	}
+	else
 		cout << "Вы ввели неверное значение b, попробуйте еще раз";
     
 }
