@@ -7,14 +7,16 @@ using namespace std;
 int main()
 {
 	bool VkomnateSvetlo, NaUliceSvetlo, Lampa, Shtori;
+	cout << "Введите значения(0 или 1(0 - ложь, 1 - истина)) для переменных: " << endl;
+	cout << "Lampa = ";
 	cin >> Lampa;
+	cout << "NaUliceSvetlo = ";
 	cin >> NaUliceSvetlo;
+	cout << "Shtori = ";
 	cin >> Shtori;
-	
-	if (NaUliceSvetlo == true && Shtori == true || Lampa == true){
-		VkomnateSvetlo = true;
-	} else
-		VkomnateSvetlo = false;
-	cout << VkomnateSvetlo;
+	if (((NaUliceSvetlo == true && Shtori == true) || Lampa) == true)
+		cout << "В комнате светло";
+	else
+		cout << "В комнате темно";
     
 }
