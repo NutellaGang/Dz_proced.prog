@@ -1,24 +1,33 @@
+  
 #include <iostream>
 #include <string>
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <cmath>
 
 using namespace std;
 
+  
+double getValue(double variable, string variableName){
+	cout << "Введите значение для " << variableName << ": "	;
+	while (!(cin >> variable)) {
+		cout << "Введите коректное значение!\n";
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	return variable;
+}
+
 int main()
 {
-	double p = 3.141592653589793;
-	float R, r, h, l, V, S;
-	cout << "Введите радиус большего основания: ";
-	cin >> R;
-	cout << "Введите радиус меньшего основания: ";
-	cin >> r;
-	cout << "Введите высоту: ";
-	cin >> h;
-	cout << "Введите длину образующей: " ;
-	cin >> l;
-	V = 1.0/3.0 * p * h * (R * R + R * r + r * r);
+	int R, r, h, l, V, S;
+	R = getValue(R, "R");
+	r = getValue(r, "r");
+	h = getValue(h, "h");
+	l = sqrt(l * l + r * r);
+	V = 1.0/3.0 * M_PI * h * (R * R + R * r + r * r);
 	cout << "Объем конуса равен: " << V << endl;
-	S = p * (R * R + (R + r) * l + r * r);
+	S = M_PI * (R * R + (R + r) * l + r * r);
 	cout << "Площадь конуса равна: " << S << endl;
 	
 }
