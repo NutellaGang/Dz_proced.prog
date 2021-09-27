@@ -4,13 +4,22 @@
 
 using namespace std;
 
+  
+double getValue(double variable, string variableName){
+	cout << "Введите значение для " << variableName << ": "	;
+	while (!(cin >> variable)) {
+		cout << "Введите коректное значение!\n";
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	return variable;
+}
+
 int main()
 {
 	float w, x, a;
-	cout << "x = ";
-	cin >> x;
-	cout << "a = ";
-	cin >> a;
+	x = getValue(x, "x");
+	a = getValue(a, "a");
 	if (abs(x) < 1){
 		w = a * log(abs(x));
 	}else
