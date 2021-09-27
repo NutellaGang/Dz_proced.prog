@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+  
+double getValue(double variable, string variableName){
+	cout << "Введите значение для " << variableName << ": "	;
+	while (!(cin >> variable)) {
+		cout << "Введите коректное значение!\n";
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	return variable;
+}
+
+int main()
+{
+	double x, y;
+	for (x = -4; x <= 4; x += 0.5){
+		if (x != 1){
+			y = (x * x - 2 * x + 2)/(x - 1);
+			cout << "При x = " << x << endl;
+			cout << "y = " << y << endl;
+		}
+		else
+			cout << "На ноль делить нельзя" << endl;
+	}
+	
+}
