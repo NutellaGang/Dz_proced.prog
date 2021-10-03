@@ -20,9 +20,19 @@ int main()
 	float w, x, a;
 	x = getValue(x, "x");
 	a = getValue(a, "a");
-	if (abs(x) < 1){
-		w = a * log(abs(x));
-	}else
-		w = sqrt(a - x * x);
+	if (abs(x) < 1)
+	{
+		if (x != 0)
+			w = a * log(abs(x));
+		else
+			cout << "нельзя вычислить логарифм из нуля";
+	}
+	else
+	{
+		if (a - x * x >= 0)
+			w = sqrt(a - x * x);
+		else
+			cout << "нельзя вычислить корень квадратный из отрицательного числа";
+	}
 	cout << "w = " << w;
 }
