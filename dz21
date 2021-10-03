@@ -1,4 +1,3 @@
-  
 #include <iostream>
 #include <string>
 #define _USE_MATH_DEFINES
@@ -25,9 +24,13 @@ int main()
 	r = getValue(r, "r");
 	h = getValue(h, "h");
 	l = sqrt(l * l + r * r);
-	V = 1.0/3.0 * M_PI * h * (R * R + R * r + r * r);
-	cout << "Объем конуса равен: " << V << endl;
-	S = M_PI * (R * R + (R + r) * l + r * r);
-	cout << "Площадь конуса равна: " << S << endl;
+	if (r > 0 and R > 0 and h > 0){
+		V = 1.0/3.0 * M_PI * h * (R * R + R * r + r * r);
+		cout << "Объем конуса равен: " << V << endl;
+		S = M_PI * (R * R + (R + r) * l + r * r);
+		cout << "Площадь конуса равна: " << S << endl;
+	}
+	else
+		cout << "значения переменных должны быть положительными";
 	
 }
