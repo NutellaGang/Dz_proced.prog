@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <string>
 #include <cmath>
 
 using namespace std;
@@ -21,6 +23,8 @@ int main()
 	x = getValue(x, "x");
 	y = getValue(y, "y");
 	b = getValue(b, "b");
-	z = log(b - y) * sqrt(b - x);
-	cout << "z = " << z;
+	if ((b - y > 0) and (b - x) >= 0)){
+		z = log(b - y) * sqrt(b - x);
+		cout << "z = " << z;
+	}
 }
