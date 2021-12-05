@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "RUS");
+	ofstream file("C:\\Users\\Denis\\Desktop\\Процедурка\\Проекты\\Практическая 5\\Файлы 25\\text.txt");
+	cout << "Введите данные для записи в файл (Поставьте ! в конце) :\n";
+	if (!file) {
+		cout << "Файл не открыт!\n";
+		return 1;
+	}
+	string line;
+
+	while (true) {
+		cin >> line;
+		if (line == "!") {
+			break;
+		}
+		file << line << endl;
+	}
+	file.close();
+
+
+	ifstream file1("C:\\Users\\Denis\\Desktop\\Процедурка\\Проекты\\Практическая 5\\Файлы 25\\text.txt");
+	int counter = -1;
+	string a;
+	bool flag = true;
+	int x = -1;
+	while (!file1.eof()) {
+		getline(file1, a);
+		for (int i = 1; i < a.length(); i++) {
+			if (a[i - 1] >= a[i]) {
+				flag = false;
+			}
+		}
+		if (flag) {
+			counter++;
+		}
+		flag = true;
+
+
+
+
+
+	}
+	cout << counter;
+}
