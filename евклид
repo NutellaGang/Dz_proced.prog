@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+//алгоритм Евклида. Вычитание
+int NOD(int A, int B)
+{
+	while (A != B)
+		if (A > B) A -= B;
+		else B -= A;
+	return A;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	int A, B;
+	cout << "A > "; cin >> A;
+	cout << "B > "; cin >> B;
+	cout << "НОД(" << A << ", " << B << ") = " << NOD(A, B);
+
+}
+
+/*#include <iostream>
+using namespace std;
+//алгоритм Евклида. Деление
+int NOD(int A, int B)
+{
+	while (A != 0 && B != 0)
+		if (A > B) A %= B; else B %= A;
+	return A + B;
+}
+//главная функция
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	int A, B;
+	cout << "A > "; cin >> A;
+	cout << "B > "; cin >> B;
+	cout << "НОД(" << A << ", " << B << ") = " << NOD(A, B);
+}
+
+
+
+
+
+*/
